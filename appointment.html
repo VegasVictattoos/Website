@@ -54,71 +54,64 @@
 </section>
 
 <section>
-  <div class="container reveal">
-    <form class="contact-form" action="https://formsubmit.co/vegasvictattoos@gmail.com" method="POST">
-      <!-- FormSubmit.co config: sends straight to Vic's inbox, no backend required.
-           On first submission, FormSubmit sends a one-time confirmation email
-           to vegasvictattoos@gmail.com that must be clicked to activate the form. -->
-      <input type="hidden" name="_subject" value="New Appointment Inquiry — Vegas Vic Tattoos">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-      <div class="form-row">
-        <div class="field">
-          <label for="firstName">First Name *</label>
-          <input type="text" id="firstName" name="First Name" required>
-        </div>
-        <div class="field">
-          <label for="lastName">Last Name *</label>
-          <input type="text" id="lastName" name="Last Name" required>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="field">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="Email" required>
-        </div>
-        <div class="field">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="Phone Number" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="city">Preferred City *</label>
-        <select id="city" name="Preferred City" required>
-          <option value="" disabled selected>Select a city</option>
-          <option value="Las Vegas, NV">Las Vegas, NV</option>
-          <option value="Buffalo, NY">Buffalo, NY</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="message">Tell Us About Your Tattoo *</label>
-        <textarea id="message" name="Message" required placeholder="Description, placement, size, reference/inspiration, and any other details..."></textarea>
-      </div>
-
-      <p class="required-note">* All fields required. We'll reply by email — please don't submit reference images here; we'll request them once we follow up.</p>
-
-      <button type="submit" class="btn btn-solid">Send Inquiry</button>
-      <p class="form-status"></p>
-    </form>
-  </div>
-</section>
-
-<section class="section-alt">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="ornament"></span>
-      <p class="eyebrow">While You're Here</p>
-      <h2>Recent Work</h2>
-    </div>
-    <div class="mini-grid reveal">
-      <div class="img-frame"><img src="MAKEAPPT__1.webp" alt="Black and grey tattoo work by Vegas Vic"></div>
-      <div class="img-frame"><img src="MAKEAPPT_2.webp" alt="Custom tattoo piece by Vegas Vic"></div>
-      <div class="img-frame"><img src="MAKEAPPT_3.webp" alt="Hand and wrist tattoo by Vegas Vic"></div>
+    <div class="form-layout reveal">
+      <form class="contact-form" action="https://formsubmit.co/vegasvictattoos@gmail.com" method="POST">
+        <!-- FormSubmit.co config: sends straight to Vic's inbox, no backend required.
+             On first submission, FormSubmit sends a one-time confirmation email
+             to vegasvictattoos@gmail.com that must be clicked to activate the form. -->
+        <input type="hidden" name="_subject" value="New Appointment Inquiry — Vegas Vic Tattoos">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="First Name" required>
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="Last Name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="Phone Number" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="city">Preferred City *</label>
+          <select id="city" name="Preferred City" required>
+            <option value="" disabled selected>Select a city</option>
+            <option value="Las Vegas, NV">Las Vegas, NV</option>
+            <option value="Buffalo, NY">Buffalo, NY</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Tell Us About Your Tattoo *</label>
+          <textarea id="message" name="Message" required placeholder="Description, placement, size, reference/inspiration, and any other details..."></textarea>
+        </div>
+
+        <p class="required-note">* All fields required. We'll reply by email — please don't submit reference images here; we'll request them once we follow up.</p>
+
+        <button type="submit" class="btn btn-solid">Send Inquiry</button>
+        <p class="form-status"></p>
+      </form>
+
+      <div class="side-gallery">
+        <div class="img-frame"><img src="MAKEAPPT__1.webp" alt="Black and grey tattoo work by Vegas Vic"></div>
+        <div class="img-frame"><img src="MAKEAPPT_2.webp" alt="Custom tattoo piece by Vegas Vic"></div>
+        <div class="img-frame"><img src="MAKEAPPT_3.webp" alt="Hand and wrist tattoo by Vegas Vic"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -135,7 +128,6 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:vegasvictattoos@gmail.com">vegasvictattoos@gmail.com</a>
         <a href="faq.html">Read the FAQ</a>
       </div>
       <div class="footer-col">
