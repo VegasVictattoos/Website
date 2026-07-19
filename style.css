@@ -13,6 +13,7 @@
   --red-bright: #d81729;
   --gold: #ad8a3f;
   --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -42,28 +43,61 @@ ul { list-style: none; }
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   line-height: 1.15;
   color: var(--white);
 }
 
-h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
-h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 20px; }
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: 20px; }
 h3 { font-size: 1.3rem; margin-bottom: 10px; }
 
 p { color: var(--off-white); margin-bottom: 16px; }
 
 .eyebrow {
-  display: inline-block;
-  font-family: var(--font-display);
-  letter-spacing: 0.25em;
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--red-bright);
+  color: var(--gold);
   font-size: 0.9rem;
   margin-bottom: 14px;
 }
+
+.ornament {
+  display: block;
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 18px;
+  opacity: 0.85;
+}
+
+.ornament::before { content: "\2726"; }
+
+/* ---------- Scroll reveal ---------- */
+/* Content is visible by default (no-JS safe). JS adds .reveal-init to hide
+   elements just before animating them in via .in-view. */
+
+.reveal { transition: opacity 0.8s ease, transform 0.8s ease; }
+
+.reveal.reveal-init { opacity: 0; transform: translateY(22px); }
+
+.reveal.reveal-init.in-view { opacity: 1; transform: translateY(0); }
 
 .btn {
   display: inline-block;
@@ -116,9 +150,17 @@ header.site-header {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--white);
+  display: flex;
+  align-items: center;
 }
 
 .logo span { color: var(--red-bright); }
+
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
 nav.main-nav ul {
   display: flex;
@@ -172,10 +214,31 @@ nav.main-nav a.active {
   background:
     linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.85) 65%, var(--black) 100%),
     radial-gradient(circle at 50% 20%, #2a2a2a 0%, #0a0a0a 70%);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(173, 138, 63, 0.18);
+  overflow: hidden;
 }
 
 .hero-inner { max-width: 760px; }
+
+/* Vertical reel/video card shown within the hero (source clip is portrait 9:16,
+   so it's framed as a card rather than forced into a full-bleed landscape crop) */
+
+.reel-frame {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  margin: 8px auto 36px;
+  border: 1px solid rgba(173, 138, 63, 0.4);
+  overflow: hidden;
+  background: var(--near-black);
+}
+
+.reel-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .hero .cities {
   display: flex;
@@ -186,13 +249,13 @@ nav.main-nav a.active {
 }
 
 .city-badge {
-  font-family: var(--font-display);
-  letter-spacing: 0.12em;
-  font-size: 0.85rem;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
   border: 1px solid var(--gold);
   color: var(--gold);
-  padding: 8px 18px;
+  padding: 8px 20px;
 }
 
 .hero p.lede {
@@ -204,7 +267,7 @@ nav.main-nav a.active {
 
 /* ---------- Sections ---------- */
 
-section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+section { padding: 100px 0; border-bottom: 1px solid rgba(173, 138, 63, 0.18); }
 section:last-of-type { border-bottom: none; }
 
 .section-alt { background: var(--near-black); }
@@ -255,7 +318,14 @@ section:last-of-type { border-bottom: none; }
   overflow: hidden;
 }
 
-.img-frame img { width: 100%; height: 100%; object-fit: cover; }
+.img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.img-frame:hover img { transform: scale(1.06); }
 
 .img-frame .placeholder-label {
   font-family: var(--font-display);
@@ -316,10 +386,24 @@ section:last-of-type { border-bottom: none; }
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 18px;
 }
 
 .portfolio-grid .img-frame { aspect-ratio: 1 / 1; }
+
+/* A couple of larger tiles break the rigid grid for a more organic, gallery-wall feel */
+.portfolio-grid .img-frame:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.portfolio-grid .img-frame:nth-child(6) { grid-column: span 2; aspect-ratio: 2 / 1; }
+
+@media (max-width: 720px) {
+  .portfolio-grid .img-frame:nth-child(1),
+  .portfolio-grid .img-frame:nth-child(6) {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 1 / 1;
+  }
+}
 
 .mini-grid {
   display: grid;

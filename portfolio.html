@@ -16,17 +16,19 @@
 <meta name="twitter:title" content="Portfolio | Vegas Vic Tattoos">
 <meta name="twitter:description" content="Portfolio of custom black-and-grey realism tattoos by Vegas Vic, working in Las Vegas, NV and Buffalo, NY.">
 <meta name="twitter:image" content="https://www.vegasvictattoos.com/images/og-image.jpg">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="nav-wrap">
-    <a href="index.html" class="logo">VEGAS <span>VIC</span></a>
+    <a href="index.html" class="logo"><img src="VEGASVICLOGO.webp" alt="Vegas Vic Tattoos" class="logo-img"></a>
     <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="main-nav">
       <ul>
@@ -44,6 +46,7 @@
 
 <section class="hero" style="min-height:50vh; padding-top:100px;">
   <div class="hero-inner">
+    <span class="ornament"></span>
     <p class="eyebrow">Custom Black &amp; Grey Realism</p>
     <h1>Portfolio</h1>
     <p class="lede">A selection of recent work. Every piece is custom-designed for the client — placement, size, and concept vary session to session.</p>
@@ -52,23 +55,24 @@
 
 <section>
   <div class="container">
-    <div class="portfolio-grid">
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 1</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 2</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 3</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 4</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 5</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 6</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 7</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 8</span></div>
-      <div class="img-frame"><span class="placeholder-label">Portfolio Image 9</span></div>
+    <div class="portfolio-grid reveal">
+      <div class="img-frame"><img src="PORTFOLIO_1.webp" alt="Owl black and grey realism tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_2.webp" alt="Rose chest piece tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_3.webp" alt="Lion face black and grey tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_4.webp" alt="Buddha and nautilus chest piece tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_5.webp" alt="French bulldog portrait tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_6.webp" alt="Mandala hand tattoo with eye design by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_7.webp" alt="Spartan helmet tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_8.webp" alt="Dinosaur skeleton tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="PORTFOLIO_9.webp" alt="Baby portrait tattoo by Vegas Vic"></div>
     </div>
-    <p class="portfolio-note">These are placeholder slots. Swap each <code>.img-frame</code> block's contents for an <code>&lt;img src="images/your-photo.jpg" alt="..."&gt;</code> tag once real photos are ready — the frame sizing and hover styling will apply automatically.</p>
+    <p class="portfolio-note">Want to reorder which pieces stand out? The first and sixth slots in this grid are set to appear larger for a gallery-wall feel — just swap which <code>.img-frame</code> holds which photo.</p>
   </div>
 </section>
 
 <section class="section-alt">
-  <div class="container" style="text-align:center;">
+  <div class="container reveal" style="text-align:center;">
+    <span class="ornament"></span>
     <p class="eyebrow">More Work</p>
     <h2>See More on Instagram</h2>
     <p>The full, most up-to-date archive of tattoos lives on Instagram.</p>
@@ -77,7 +81,8 @@
 </section>
 
 <section>
-  <div class="container" style="text-align:center;">
+  <div class="container reveal" style="text-align:center;">
+    <span class="ornament"></span>
     <p class="eyebrow">Like What You See?</p>
     <h2>Start Your Custom Piece</h2>
     <a href="appointment.html" class="btn btn-solid">Make Appointment</a>

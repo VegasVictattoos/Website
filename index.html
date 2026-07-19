@@ -16,10 +16,12 @@
 <meta name="twitter:title" content="Vegas Vic Tattoos | Custom Black & Grey Realism">
 <meta name="twitter:description" content="Vegas Vic — custom black-and-grey realism tattoo artist working by appointment in Las Vegas, NV and Buffalo, NY.">
 <meta name="twitter:image" content="https://www.vegasvictattoos.com/images/og-image.jpg">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -46,7 +48,7 @@
 
 <header class="site-header">
   <div class="nav-wrap">
-    <a href="index.html" class="logo">VEGAS <span>VIC</span></a>
+    <a href="index.html" class="logo"><img src="VEGASVICLOGO.webp" alt="Vegas Vic Tattoos" class="logo-img"></a>
     <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="main-nav">
       <ul>
@@ -62,19 +64,9 @@
 
 <main>
 
-<section class="video-section">
-  <div class="container">
-    <!-- Swap this block for a <video controls src="..."></video> or an embedded
-         YouTube/Vimeo <iframe> once a promo/reel video is ready. -->
-    <div class="video-frame">
-      <div class="play-icon"></div>
-      <span class="placeholder-label">Promo Video Placeholder</span>
-    </div>
-  </div>
-</section>
-
 <section class="hero">
   <div class="hero-inner">
+    <span class="ornament"></span>
     <p class="eyebrow">Custom Black &amp; Grey Realism</p>
     <h1>Vegas Vic</h1>
     <div class="cities">
@@ -82,6 +74,9 @@
       <span class="city-badge">Buffalo, NY</span>
     </div>
     <p class="lede">Detailed, medium- to large-scale tattoos built around your story, your anatomy, and your vision. Working by appointment in two cities.</p>
+    <div class="reel-frame">
+      <video src="homepage-video.mp4" autoplay muted loop playsinline></video>
+    </div>
     <div class="btn-row" style="justify-content:center;">
       <a href="portfolio.html" class="btn">View Portfolio</a>
       <a href="appointment.html" class="btn btn-solid">Book a Session</a>
@@ -91,13 +86,13 @@
 
 <section>
   <div class="container two-col">
-    <div class="img-frame">
-      <span class="placeholder-label">Portfolio Image<br>Placeholder</span>
+    <div class="img-frame reveal">
+      <img src="VIC_SELFIE.webp" alt="Vic, aka Vegas Vic, tattoo artist">
     </div>
-    <div>
+    <div class="reveal">
       <p class="eyebrow">The Artist</p>
       <h2>Precision. Composition.<br>A Personal Approach.</h2>
-      <p>Vic Camarillo, better known as Vegas Vic, specializes in custom black-and-grey realism. Every piece is shaped around the client's story, anatomy, and vision — combining technical precision with strong composition.</p>
+      <p>Vic, better known as Vegas Vic, specializes in custom black-and-grey realism. Every piece is shaped around the client's story, anatomy, and vision — combining technical precision with strong composition.</p>
       <p>He currently tattoos by appointment in both Buffalo, New York, and Las Vegas, Nevada.</p>
       <a href="meet-vic.html" class="btn">Meet Vic</a>
     </div>
@@ -106,15 +101,16 @@
 
 <section class="section-alt">
   <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">Recent Work</p>
+    <div class="section-head reveal">
+      <span class="ornament"></span>
+      <p class="eyebrow">Selected Pieces</p>
       <h2>A Glimpse of the Portfolio</h2>
       <p>Black &amp; grey realism, custom pieces, and detailed linework.</p>
     </div>
-    <div class="portfolio-grid">
-      <div class="img-frame"><span class="placeholder-label">Image</span></div>
-      <div class="img-frame"><span class="placeholder-label">Image</span></div>
-      <div class="img-frame"><span class="placeholder-label">Image</span></div>
+    <div class="portfolio-grid reveal">
+      <div class="img-frame"><img src="Homepage_1.webp" alt="Black and grey realism tattoo by Vegas Vic"></div>
+      <div class="img-frame"><img src="Homepage_2.webp" alt="Custom tattoo piece by Vegas Vic"></div>
+      <div class="img-frame"><img src="Homepage_3.webp" alt="Black and grey mandala hand tattoo by Vegas Vic"></div>
     </div>
     <div style="text-align:center; margin-top:40px;">
       <a href="portfolio.html" class="btn">See Full Portfolio</a>
@@ -124,7 +120,8 @@
 
 <section>
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
+      <span class="ornament"></span>
       <p class="eyebrow">Ready to Get Started?</p>
       <h2>Book Your Session</h2>
       <p>Send your idea, reference photos, and preferred city — Vic will follow up by email to plan your appointment.</p>

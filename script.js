@@ -28,4 +28,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // Gentle fade-up reveal for elements marked .reveal as they scroll into view.
+  // Progressive enhancement only: elements are already visible without JS
+  // (see the no-js fallback below), this just adds the motion.
+  var revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    revealEls.forEach(function (el) { el.classList.add('reveal-init'); });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  }
 });
