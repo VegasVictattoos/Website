@@ -30,8 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Gentle fade-up reveal for elements marked .reveal as they scroll into view.
-  // Progressive enhancement only: elements are already visible without JS
-  // (see the no-js fallback below), this just adds the motion.
+  // Progressive enhancement only: elements are already visible without JS.
+  // threshold is intentionally tiny (not e.g. 0.15) — a tall block (a long
+  // FAQ answer list, a form with a photo column, etc.) may never have 15%
+  // of its own height inside the viewport at once, especially on mobile,
+  // which would leave it stuck invisible forever. Any sliver of visibility
+  // is enough to trigger the reveal here.
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length && 'IntersectionObserver' in window) {
     revealEls.forEach(function (el) { el.classList.add('reveal-init'); });
@@ -42,7 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -10px 0px' });
     revealEls.forEach(function (el) { observer.observe(el); });
+
+    // Safety net: if anything is still hidden after 2.5s (observer glitch,
+    // unusual layout, etc.), force it visible rather than let it stay gone.
+    setTimeout(function () {
+      document.querySelectorAll('.reveal.reveal-init:not(.in-view)').forEach(function (el) {
+        el.classList.add('in-view');
+      });
+    }, 2500);
   }
 });
